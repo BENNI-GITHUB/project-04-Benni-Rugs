@@ -26,7 +26,7 @@ body {
 	overflow-x: hidden;
 	word-wrap: break-word;
 	background-color: #2B0101;
-	background-image: url('/static/images/background.png');
+	background-image: url('/static/images/background-min.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -103,6 +103,9 @@ body {
     padding: 10px;
 }
 
+.bg-nav {
+	background: #2B0101;
+}
 .gold-button:hover {
     color: white;
 }
@@ -127,7 +130,7 @@ body {
 }
 
 .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: #f0ca69b4;
+	color: #f0ca695f;
 	opacity: 1; /* Firefox */
 }
 
@@ -184,6 +187,87 @@ input[type="text"]:focus {
     font-size: 12px !important;
 }
 
+/* Gallery -02 */
+.gallery-container {
+	margin-top: 164px;
+}
+
+.gallery {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gallery li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.thumbnail {
+	position: relative;
+}
+
+.gallery-img {
+	height: 400px;
+}
+
+.thumbnail:hover .gallery-img{
+	opacity: 0.5;
+	background-color: rgba(0,0,0,0.322);
+}
+
+.thumbnail:hover .caption {
+	opacity: 1;
+	transition: 1s ease;
+}
+
+.caption {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.caption p {
+	border-radius: inherit;
+	padding-bottom: 1.5625rem;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+	padding-top: 1.5625rem;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	font-family: 'Lexend Deca', sans-serif;
+	letter-spacing: 0.35rem;
+	font-size: 1.5em;
+	line-height: 1.5;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: 700;
+}
+
+.box1 {
+	/* width: 30%; */
+	height: 350px;
+	background-color: #F0CA69;
+}
+
+.box2 {
+	/* width: 30%; */
+	height: 350px;
+	background-color: #880000;
+}
+.box3 {
+	/* width: 30%; */
+	height: 350px;
+	background-color: #4D4E54;
+}
 /* Typography */
 
 h1.style1, h2.style1, h3.style1, p.style1 {
@@ -239,9 +323,37 @@ h1.style7, h2.style7, h3.style7, p.style7 {
 }
 
 
-@media screen and (min-width: 300px) {
+/* Footer */
+.footer-logo {
+	height: auto;
+	width: 60%;
+}
+
+footer a:hover {
+    color: #f0ca696f !important;
+	font-weight: bolder !important;
+}
+
+.divider1 {
+    border-right: 1px solid rgba(245, 246, 245, 0.2);
+}
+
+.divider2 {
+    border-left: 1px solid rgba(245, 246, 245, 0.2);
+}
+
+@media screen and (max-width: 565px) {
 	span.navbar-light,
     .navbar-light {
         color: #F0CA69 !important;
+    }
+
+	.gallery {
+		flex-direction: column;
+	}
+
+	.divider {
+        border: none;
+        padding: 0 !important;
     }
 }
