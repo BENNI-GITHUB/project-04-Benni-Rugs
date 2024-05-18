@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                         
-                        <form method="GET" action="">
+                        <form method="GET" action="{% url 'products' %}">
                             <div class="input-group w-100 search-box-input">
                                 <input class="form-control border-left-0 border-right-0 border-top-0" type="text" name="q"
                                     placeholder="Search our site" aria-label="Search">
@@ -104,7 +104,7 @@
                                 </div>
                             </li>
                             <li class="list-inline-item nav-icons">
-                                <a class="text-gold nav-link px-1" href="" aria-label="View Bag">
+                                <a class="text-gold nav-link px-1" href="{% url 'view_bag' %}" aria-label="View Bag">
                                     <div class="text-center">
                                         <div><i class="fas fa-shopping-bag fa-lg"></i>
                                             {% if product_count %}
