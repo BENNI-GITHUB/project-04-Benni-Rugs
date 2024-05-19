@@ -455,11 +455,32 @@ input[type=number] {
 }
 
 .bag-image {
-    width: 100%;
-    height: 10vw;
+    width: 50%;
+	margin-left: 25%;
     object-fit: cover;
     min-height: 150px;
 }
+
+
+/* Messages */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 
 @media screen and (max-width: 565px) {
 	span.navbar-light,
