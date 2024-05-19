@@ -1,1 +1,164 @@
-<div class="overlay">hi</div>
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block extra_title %}| Shopping Bag{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center pt-4">Shopping Bag</h1>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+            <div class="d-block d-md-none mx-4 mx-sm-0">
+                <div class="row">
+                    <div class="col">
+                        {% include "bag/includes/bag_total.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% include "bag/includes/checkout_buttons.html" %}
+                        <p class="text-muted my-3">A summary of your bag contents is below</p>
+                    </div>
+                </div>
+                {% for item in bag_items %}
+                <div class="row">
+                    <div class="col-12 col-sm-6 mb-3">
+                        {% include "bag/includes/product_image.html" %}
+                    </div>
+                    <div class="col-12 col-sm-6 mb-3">
+                        {% include "bag/includes/product_info.html" %}
+                    </div>
+                    <div class="col-12 col-sm-6 order-sm-last">
+                        <p class="my-0">Price Each: £{{ item.product.price }}</p>
+                        <p><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    </div>
+                    <div class="col-12 col-sm-6 edit-delete-btns">
+                        {% include "bag/includes/quantity_form.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="btt-button shadow-sm rounded-0 border-gold">
+                    <div class="btt-link d-flex h-100">
+                        <i class="fas fa-arrow-up text-jet mx-auto my-auto"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive rounded d-none d-md-block">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr class="bg-light text-center">
+                            <th scope="col">Product</th>
+                            <th scope="col"></th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            {% include "bag/includes/product_image.html" %}
+                        </td>
+                        <td class="py-3">
+                            {% include "bag/includes/product_info.html" %}
+                        </td>
+                        <td class="py-3 text-center">
+                            <p class="my-0">£{{ item.product.price }}</p>
+                        </td>
+                        <td class="py-3 mx-auto">
+                            {% include "bag/includes/quantity_form.html" %}
+                        </td>
+                        <td class="py-3 text-center">
+                            <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </td>
+                        <td class="py-3 edit-delete-btns">
+                            <span class="update-link btn p-0"><small><i class="fas fa-sync"></i></small></span>
+                            <span class="remove-btn btn p-0 float-right remove_{{ item.item_id }}"><small><i
+                                        class="fas fa-trash-alt"></i></small></span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="6" class="pt-5 text-right">
+                            {% include "bag/includes/bag_total.html" %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="text-right">
+                            {% include "bag/includes/checkout_buttons.html" %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% else %}
+            <p class="lead mx-4 mx-sm-0 mb-4">Your bag is empty.</p>
+            <div class="mx-4 mx-sm-0">
+                <a href="{% url 'products' %}" class="btn btn-outline-dark border-gold rounded-0 ">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+
+<script>
+    // update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).parent().siblings().children('.update-form');
+        form.submit();
+    });
+
+    // update quantity on click mobile
+    $('.mobile-update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    });
+
+    // Remove item and reload on click
+    $('.remove-btn').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('class').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
+        
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
+</script>
+{% endblock %}
