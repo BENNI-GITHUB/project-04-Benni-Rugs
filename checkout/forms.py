@@ -1,3 +1,5 @@
+"""Order Form Imports"""
+
 from django import forms
 from .models import Order
 
@@ -42,6 +44,12 @@ class OrderForm(forms.ModelForm):
 
         self.fields['phone_number'].widget.attrs[
             'pattern'] = "[0-9]{1,15}"
+
+        """
+        To prevent form being submitted with whitespace
+        Credit:
+        https://stackoverflow.com/questions/19619428/html5-form-validation-pattern-alphanumeric-with-spaces
+        """
         self.fields['full_name'].widget.attrs[
             'pattern'] = "([^\\s][A-z0-9À-ž\x27\\s]+)"
         self.fields['street_address1'].widget.attrs[
