@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}| Enquiry{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="overlay"></div>
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center pt-4">Make an Enquiry</h1>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center ">
+        <div class="col-11 col-md-8 col-lg-6 mt-3">
+            <form method="post">
+                {{ contact_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-dark border-gold rounded-0">Submit</button>
+                <a class="btn btn btn-outline-dark border-gold rounded-0 m-2" href="{%  url 'home' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

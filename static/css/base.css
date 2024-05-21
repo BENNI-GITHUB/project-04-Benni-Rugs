@@ -535,6 +535,13 @@ input[type=number] {
     background-color: #222;
 }
 
+
+@media (min-width: 992px) {
+    .header-container {
+        padding-top: 157px;
+    }
+}
+
 @media screen and (max-width: 565px) {
 	span.navbar-light,
     .navbar-light {

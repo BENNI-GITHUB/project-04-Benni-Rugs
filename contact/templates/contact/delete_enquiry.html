@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %}| Delete Product{% endblock %}
+{% block extra_title %}| Delete Enquiry{% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -17,18 +17,18 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center pt-4">Delete Product</h1>
+            <h1 class="text-center pt-4">Delete Enquiry</h1>
         </div>
     </div>
     <br>
-    <p class="text-center mt-3 text-gold">Are you sure you want to delete this Product?</p>
+    <p class="text-center mt-3">Are you sure you want to delete this Enquiry?</p>
     <div class="row justify-content-center">
         <div class="col-11 col-md-6 col-lg-4 mt-3">
             <form class="text-center" method="POST">
                 {%  csrf_token  %}
                 <div>
-                    <button class="btn btn-outline-dark border-gold rounded-0 m-2 text-gold" type="submit">Delete</button>
-                    <a class="btn btn-outline-dark border-gold rounded-0 m-2 text-gold" href="{%  url 'products' %}">Cancel</a>
+                    <button class="btn btn-outline-dark border-gold rounded-0 m-2" type="submit">Delete</button>
+                    <a class="btn btn-outline-dark border-gold rounded-0 m-2" href="{%  url 'enquiries' %}">Cancel</a>
                 </div>
             </form>
         </div>

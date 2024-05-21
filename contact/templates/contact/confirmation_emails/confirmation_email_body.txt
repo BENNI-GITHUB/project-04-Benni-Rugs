@@ -1,0 +1,13 @@
+Dear {{ cust_name }},
+
+We have received your inquiry as below:
+
+" {{ message }} ". 
+
+We will review it promptly. Our team will get back to you shortly with more information. 
+
+If you have any urgent questions, please contact our support team.
+
+
+Best regards,
+Benni Rugs
