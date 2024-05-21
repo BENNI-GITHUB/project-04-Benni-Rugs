@@ -465,6 +465,22 @@ input[type=number] {
     min-height: 150px;
 }
 
+/* Service Cards */
+
+.alt-colour {
+    background: #9401014c;
+}
+
+.alt-colour:nth-child(odd) {
+    background:  #b400004c;
+}
+
+.service-img {
+    height: 300px;
+    object-fit: cover;
+    width: 300px;
+    border-radius: 10px;
+}
 
 /* Messages */
 

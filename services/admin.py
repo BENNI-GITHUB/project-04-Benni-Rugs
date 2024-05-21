@@ -1,3 +1,13 @@
-from django.contrib import admin
+"""imports for admin page"""
 
-# Register your models here.
+from django.contrib import admin
+from .models import Service
+
+class ServiceAdmin(admin.ModelAdmin):
+    """Allows admin to manage Services via the admin panel"""
+    list_display = (
+        'type',
+        'image',
+    )
+
+admin.site.register(Service, ServiceAdmin)
