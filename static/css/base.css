@@ -482,6 +482,35 @@ input[type=number] {
     border-radius: 10px;
 }
 
+/* Testimonials */
+
+.star-rating {
+	direction: rtl;
+	display: inline-flex;
+}
+.star-rating input[type="radio"] {
+	display: none;
+}
+
+.star-rating span {
+	font-size: 2em;
+	color: #F0CA69;
+}
+
+.star-rating label {
+	font-size: 2em;
+	color: #ddd;
+	cursor: pointer;
+}
+.star-rating input[type="radio"]:checked ~ label {
+	color: #F0CA69;
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+	color: #F0CA69;
+}
+
+
 /* Messages */
 
 .message-container {
