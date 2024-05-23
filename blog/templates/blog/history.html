@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}| Profile {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="overlay"></div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1 class="text-left pt-4" style="color: #f0ca698f;">The Rich History of Persian Rugs</h1>
+        </div>
+    </div>
+    <hr style="background-color: #f0ca69b5;">
+    <br>
+    <div class="row mt-2">
+        <div class="col-12 col-md-7">
+            <img src="{% static 'images/81213.jpg' %}" class="rounded-lg w-100" alt="about-us">
+        </div>
+        <div class="col-12 col-md-5">
+            <h3 class="text-gold text-left mt-5 mb-2">A Timeless Art Form</h3>
+            <p class="text-gold h5 text-justify" style="line-height: 40px;">Persian rugs, renowned for their 
+                intricate designs and superior craftsmanship, have a history that spans over two millennia. 
+                These masterpieces, originating from the region now known as Iran, 
+                are much more than just floor coverings; they are a reflection of a rich cultural heritage and artistic tradition.
+            </p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <h4 class="text-gold text-left mt-3">
+            Ancient Beginnings
+        </h4>
+        <p class="h6 text-justify text-gold-muted">
+            The art of rug weaving in Persia dates back to ancient times. The earliest known Persian rug, the Pazyryk carpet, discovered in a Siberian burial mound, dates back to the 5th century BCE. This carpet, with its intricate design and vivid colors, showcases the high level of craftsmanship that existed even then.
+        </p>
+        <h4 class="text-gold text-left mt-3">
+            The Islamic Golden Age
+        </h4>
+        <p class="h6 text-justify text-gold-muted">
+            The true flourishing of Persian rug making began during the Islamic Golden Age (8th to 13th centuries). During this period, Persia became a cultural and artistic hub, with rug weaving emerging as a significant art form. The designs incorporated Islamic motifs, such as geometric patterns and arabesques, influenced by Persian art and architecture.
+        </p>
+        <h4 class="text-gold text-left mt-3">
+            Safavid Dynasty: The Golden Era
+        </h4>
+        <p class="h6 text-justify text-gold-muted">
+            The 16th century marked the beginning of the Safavid Dynasty, a period often considered the golden era of Persian rug making. Shah Abbas I, a ruler of this dynasty, established royal workshops in cities like Isfahan, Kashan, and Tabriz. These workshops produced some of the finest rugs, characterized by intricate floral patterns, hunting scenes, and elaborate medallions. The use of silk and silver threads became more common, elevating the rugs to the status of luxury items.
+        </p>
+        <h4 class="text-gold text-left mt-3">
+            Influence of Trade and Commerce
+        </h4>
+        <p class="h6 text-justify text-gold-muted">
+            During the 17th and 18th centuries, Persian rugs became highly sought after in Europe. Trade routes, including the Silk Road, facilitated the export of these exquisite rugs, making them a symbol of wealth and sophistication in European households. This demand led to the establishment of weaving centers and the adaptation of designs to suit Western tastes.
+        </p>
+        <h4 class="text-gold text-left mt-3">
+            Modern Era: Preservation and Innovation
+        </h4>
+        <p class="h6 text-justify text-gold-muted">
+            In the 20th century, the Persian rug industry faced challenges due to political upheavals and changing economic conditions. However, efforts to preserve this ancient craft continued. Today, both traditional handwoven rugs and modern designs are produced, catering to a global market. Organizations and artisans strive to maintain the authenticity and quality of Persian rugs, ensuring that this timeless art form endures.
+        </p>
+        <h4 class="text-gold text-left mt-3">
+            Cultural Significance
+        </h4>
+        <p class="h6 text-justify text-gold-muted">
+            Persian rugs are more than decorative pieces; they are woven narratives that tell stories of the people and the land. Each rug reflects the weaver's environment, beliefs, and emotions, making every piece unique. The symbolism embedded in the patterns and colors often conveys messages of protection, prosperity, and harmony.
+        </p>
+
+    </div>
+</div>
+<div class="container">
+    <hr style="background-color: #f0ca69b5;">
+    <div class="row mt-5">
+        <div class="col-12">
+            <p class="text-gold-muted h5">
+                The history of Persian rugs is a testament to the enduring beauty and craftsmanship of Persian culture. From ancient times to the present day, these rugs have evolved while maintaining their essence, representing a harmonious blend of art, history, and tradition. As we walk on these woven wonders, we are treading on centuries of history, art, and human expression.
+            </p>
+            <p class="text-gold-muted h5">
+                Whether you are a collector, a history enthusiast, or someone who appreciates fine craftsmanship, Persian rugs offer a glimpse into a world where art and culture are intricately intertwined, creating timeless treasures that continue to captivate and inspire.
+            </p>
+            <hr>
+        </div>
+    </div>
+
+</div>
+</div>
+    <hr style="background-color: #f0ca69b5;">
+{% endblock %}

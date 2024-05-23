@@ -25,7 +25,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="font-weight-bold nav-link mr-3" href="">
+            <a class="font-weight-bold nav-link mr-3" href="{% url 'about' %}">
                 About Us
             </a>
         </li>
@@ -35,9 +35,9 @@
                 Blog
             </a>
             <div class="dropdown-menu border-0 bg-gold" aria-labelledby="blog-link">
-                <a href="" class="dropdown-item mb-1">History of Rug</a>
-                <a href="" class="dropdown-item mb-1">Rug Weaving</a>
-                <a href="" class="dropdown-item mb-1">Rug Repair</a>
+                <a href="{% url 'history' %}" class="dropdown-item mb-1">History of Rug</a>
+                <a href="{% url 'weaving' %}" class="dropdown-item mb-1">Rug Weaving</a>
+                <a href="{% url 'repair' %}" class="dropdown-item mb-1">Rug Repair</a>
             </div>
         </li>
         <li class="nav-item">
