@@ -4,17 +4,30 @@
         <div class="col-12 col-md-4 p-4 order-first">
             <h1 class="text-left style7 text-uppercase text-center">Stay in Touch!</h1>
             <hr class="w-50 bg-warning align-left">
-            <ul class="social-networks">
+            <ul class="social-networks w-50 m-auto">
                 <li class="col-4">
-                    hello1 
+                    <a href="" target="_blank" class="text-gold h2"><i class="fab fa-facebook-f"></i></a>
                 </li>
                 <li class="col-4">
-                    hello2
+                    <a href="" target="_blank" class="text-gold h2"><i class="fab fa-instagram"></i></a>
                 </li>
                 <li class="col-4">
-                    hello3
+                    <a href="" target="_blank" class="text-gold h2"><i class="fab fa-github"></i></a>
                 </li>
             </ul>
+            <ul>
+                <li style="list-style: none;" class="text-center mr-5 mt-4">
+                    <a href="tel:+447383782175" class="contact-icon text-gold h5 text-center text-decoration-none">
+                        <i class="fas fa-phone-alt mr-2"></i> Call Us:<br><small>0738 3782 175</small>
+                    </a>
+                </li>
+                <li style="list-style: none;" class="text-center mr-5 mt-4">
+                    <a href="mailto:behnampordavam@gmail.com" class="contact-icon text-gold h5 text-center text-decoration-none">
+                        <i class="fas fa-envelope mr-2"></i> Email Us:<br><small>behnampordavam@gmail.com</small>
+                    </a>
+                </li>
+            </ul>
+
         </div>
 
         <div class="col-12 col-md-4 p-4 text-center divider">
@@ -27,23 +40,24 @@
             <hr class="w-50 bg-warning">
             <ul class="nav flex-column px-4">
                 <li class="nav-item">
-                    <a href="" class="nav-link text-uppercase text-center text-gold">SHOP RUGS</a>
+                    <a href="{% url 'products' %}" class="nav-link text-uppercase text-center text-gold">SHOP RUGS</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-uppercase text-center text-gold">RUG SERVICES</a>
+                    <a href="{% url 'services' %}" class="nav-link text-uppercase text-center text-gold">RUG
+                        SERVICES</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-uppercase text-center text-gold">ABOUT US</a>
+                    <a href="{% url 'about' %}" class="nav-link text-uppercase text-center text-gold">ABOUT US</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-uppercase text-center text-gold">Testimonials</a>
+                    <a href="{% url 'testimonials' %}"
+                        class="nav-link text-uppercase text-center text-gold">Testimonials</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link text-uppercase text-center text-gold">contact us</a>
+                    <a href="{% url 'contact' %}" class="nav-link text-uppercase text-center text-gold">contact us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://www.privacypolicygenerator.info/live.php?token=77vt4RyR63gikm5tYefcnXcIqUdo97uc"
-                        target="_blank" class="nav-link text-uppercase text-center text-gold">Privacy Policy</a>
+                    <a href="" target="_blank" class="nav-link text-uppercase text-center text-gold">Privacy Policy</a>
                 </li>
             </ul>
         </div>

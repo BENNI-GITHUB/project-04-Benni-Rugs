@@ -84,7 +84,7 @@
                                     {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Benni Rugs Management</a>
                                     <a href="{% url 'add_service' %}" class="dropdown-item">Rug Services Management</a>
-                                    <a href="" class="dropdown-item">Enquiries</a>
+                                    <a href="{% url 'enquiries' %}" class="dropdown-item">Enquiries</a>
                                     {% endif %}
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

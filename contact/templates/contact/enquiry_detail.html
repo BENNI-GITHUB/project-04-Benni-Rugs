@@ -13,41 +13,42 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container pb-5">
+<div class="container pb-5 text-gold">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center pt-4">Enquiry</h1>
+            <h1 class="text-left pt-4" style="color: #f0ca69b9;">Enquiry</h1>
         </div>
     </div>
+    <hr style="background-color: #f0ca69b5;">
     <br>
-    <div class="row justify-content-center ">
+    <div class="row justify-content-center">
         <div class="col-11 col-md-8 col-lg-6 mt-3">
             <table class="table table-borderless">
                 <tbody>
                     <tr>
-                        <th>Name:</th>
-                        <td>{{ contact.name }}</td>
+                        <th class=" text-gold">Name:</th>
+                        <td style="color: #f0ca69b9;">{{ contact.name }}</td>
                     </tr>
                     <tr>
-                        <th>Email:</th>
-                        <td>{{ contact.email }}</td>
+                        <th class=" text-gold">Email:</th>
+                        <td style="color: #f0ca69b9;">{{ contact.email }}</td>
                     </tr>
                     <tr>
-                        <th>Enquiry Type:</th>
-                        <td>{{ contact.get_enquiry_type_display }}</td>
+                        <th class=" text-gold">Enquiry Type:</th>
+                        <td style="color: #f0ca69b9;">{{ contact.get_enquiry_type_display }}</td>
                     </tr>
                     <tr>
-                        <th>Message:</th>
-                        <td>{{ contact.message }}</td>
+                        <th class=" text-gold">Message:</th>
+                        <td style="color: #f0ca69b9;">{{ contact.message }}</td>
                     </tr>
                     <tr>
-                        <th>Date:</th>
-                        <td>{{ contact.date }}</td>
+                        <th class=" text-gold">Date:</th>
+                        <td style="color: #f0ca69b9;">{{ contact.date }}</td>
                     </tr>
                 </tbody>
             </table>
-            <a class="btn btn btn-outline-dark border-gold rounded-0 m-2" href="{%  url 'enquiries' %}">Back</a>
-            <a class="btn btn btn-outline-dark border-gold rounded-0 m-2"
+            <a class="btn btn btn-outline-dark border-gold rounded-0 m-2 text-gold" href="{%  url 'enquiries' %}">Back</a>
+            <a class="btn btn btn-outline-dark border-gold rounded-0 m-2 text-gold"
                 href="{% url 'delete_enquiry' contact.id %}">Delete</a>
         </div>
     </div>

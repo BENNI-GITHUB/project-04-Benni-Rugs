@@ -132,7 +132,7 @@ body {
     height: 90px;
 }
 
-.navbar-toggler-icon span{
+.navbar-toggler-icon{
     color: #F0CA69 !important;
 }
 
@@ -171,9 +171,12 @@ input[type="text"]:focus {
 
 .username:hover {
     color: #4D4E54;
-    ;
 }
 
+.dropdown-item:hover {
+	background-color: #F0CA69;
+	color: #2B0101 !important; 
+}
 
 .navbar ul a {
     text-transform: uppercase;
@@ -268,6 +271,40 @@ input[type="text"]:focus {
 	font-weight: 700;
 }
 
+.blog-image-1 {
+	width: 100%;
+	height: 100%;
+	background-image: url('/static/images/rug_art.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.blog-image-2 {
+	width: 100%;
+	height: 100%;
+	background-image: url('/static/images/weaving.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.gallery-4 div {
+	height: 350px;
+	overflow: hidden;
+	transition: transform 0.5s ease;
+}
+
+.gallery-4 img {
+	width: 100%;
+	height: 100%;
+	transition: transform 0.5s ease;
+}
+
+.gallery-4 img:hover {
+	transform: scale(1.2);
+}
+
 /* Typography */
 
 h1.style1, h2.style1, h3.style1, p.style1 {
@@ -323,11 +360,15 @@ h1.style7, h2.style7, h3.style7, p.style7 {
 }
 
 .text-gold-muted {
-	color: #6c330d8f;
+	color: #f0ca69a3;
 	line-height: 25px;
 }
 
 /* Footer */
+footer {
+	border-top: 2px solid #F0CA69;
+}
+
 .footer-logo {
 	height: auto;
 	width: 60%;
@@ -347,7 +388,6 @@ footer a:hover {
 footer .social-networks {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: var(--flex-alignment);
 	letter-spacing: 0;
 	padding: 0;
 	list-style: none;
@@ -356,7 +396,6 @@ footer .social-networks {
 footer .social-networks li {
 	position: relative;
 	z-index: 1;
-	border: 2px solid white;
 	list-style: none;
 	text-align: center;
 }
@@ -393,6 +432,11 @@ footer .social-networks li {
     border-radius: 0;
 }
 
+
+#sort-selector option:hover {
+	color: #2B0101;
+	background: #F0CA69;
+}
 
 .product-card {
 	width: 80%;
