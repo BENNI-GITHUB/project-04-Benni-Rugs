@@ -9,9 +9,9 @@ from services.models import Service
 class Testimonial(models.Model):
     """Model for Testimonial"""
     name = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="testimonial")
+        User, on_delete=models.CASCADE, related_name="testimonials")
     service = models.ForeignKey(
-        Service, on_delete=models.CASCADE, related_name='testimonials')
+        Service, on_delete=models.CASCADE, related_name='testimonial')
     rating = models.IntegerField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now=True)

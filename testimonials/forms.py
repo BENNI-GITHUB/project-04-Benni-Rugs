@@ -1,3 +1,5 @@
+
+# form of testemonial
 from django import forms
 from .models import Testimonial
 from products.widgets import CustomClearableFileInput
@@ -22,6 +24,8 @@ class TestimonialForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Field('rating', css_class='star-rating'),
+            Field('body'),
+            Field('service'),
         )
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-gold'
+            field.widget.attrs['class'] = 'border-gold bg-transparent text-gold'

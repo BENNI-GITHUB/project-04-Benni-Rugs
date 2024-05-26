@@ -17,18 +17,31 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center pt-4">Edit Testimonial</h1>
+            <h1 class="text-left pt-4"  style="color: #f0ca698f;">Edit Testimonial</h1>
         </div>
     </div>
+    <hr style="background-color: #f0ca69b5;">
     <br>
     <div class="row justify-content-center mb-3">
         {% if user.is_authenticated and testimonial.name == user or user.is_superuser  %}
         <div class="col-11 col-md-8 col-lg-6 mt-3">
             <form method="post" enctype="multipart/form-data">
-                {{ form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-outline-dark border-gold rounded-0">Edit Testimonial</button>
-                <a class="btn btn btn-outline-dark border-gold rounded-0 m-2"
+                <div class="star-rating">
+                    <input type="radio" name="rating" id="5-stars" value="5">
+                    <label for="5-stars" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="4-stars" value="4">
+                    <label for="4-stars" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="3-stars" value="3">
+                    <label for="3-stars" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="2-stars" value="2">
+                    <label for="2-stars" class="star">&#9733;</label>
+                    <input type="radio" name="rating" id="1-star" value="1">
+                    <label for="1-star" class="star">&#9733;</label>
+                </div>
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-outline-dark text-gold border-gold rounded-0">Edit Testimonial</button>
+                <a class="btn btn btn-outline-dark border-gold rounded-0 text-gold m-2"
                     href="{%  url 'testimonials' %}">Cancel</a>
             </form>
         </div>

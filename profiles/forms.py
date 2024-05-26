@@ -30,5 +30,5 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-gold'
+            self.fields[field].widget.attrs['class'] = 'border-gold bg-transparent text-gold'
             self.fields[field].label = False

@@ -17,12 +17,13 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center pt-4">Add Testimonial</h1>
+            <h1 class="text-left pt-4"  style="color: #f0ca698f;">Add Testimonial</h1>
         </div>
     </div>
+    <hr style="background-color: #f0ca69b5;">
     <br>
     <div class="row justify-content-center">
-        <div class="col-11 col-md-8 col-lg-6 mt-3 add-recipe-outer">
+        <div class="col-11 col-md-8 col-lg-6 mt-3 add-recipe-outer mb-4">
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="star-rating">
@@ -38,8 +39,8 @@
                     <label for="1-star" class="star">&#9733;</label>
                 </div>
                 {{ form | crispy }}
-                <button type="submit" class="btn btn-outline-dark border-gold rounded-0">Add Testimonial</button>
-                <a class="btn btn btn-outline-dark border-gold rounded-0 m-2"
+                <button type="submit" class="btn btn-outline-dark border-gold text-gold rounded-0">Add Testimonial</button>
+                <a class="btn btn btn-outline-dark border-gold text-gold rounded-0 m-2"
                     href="{%  url 'testimonials' %}">Cancel</a>
             </form>
         </div>

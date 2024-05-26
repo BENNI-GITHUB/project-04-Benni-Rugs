@@ -16,9 +16,9 @@
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row">
-        <div class="container mt-4">
+        <div class="container mt-5">
             <div class="col-12">
-                <h1 class="text-left pt-4" style="color: #f0ca69b9;">Rug Services</h1>
+                <h1 class="text-left pt-4" style="color: #f0ca698f;">Rug Services</h1>
             </div>
             <hr style="background-color: #f0ca69b5;">
         </div>
@@ -32,14 +32,14 @@
     </div>
     <br>
     {% for service in service_list  %}
-    <div class="row alt-colour">
+    <div class="row">
         <div class="container services-inner">
             <div class="col-12 pl-md-4">
                 <div class="card my-5 border-0 bg-transparent">
                     <div class="row no-gutters">
                         <div class="col-12 col-md-5 col-lg-4">
                             {% if service.image %}
-                            <img src="{{ service.image.url }}" class="service-img" alt="{{ service.type }}">
+                            <img src="{{ service.image.url }}" class="service-img w-100" alt="{{ service.type }}">
                             {% else %}
                             <img src="{{ MEDIA_URL }}noimage.png" alt="{{ service.type }}" class="">
                             {% endif %}
@@ -47,18 +47,21 @@
                         <div class="col-12 col-md-7 col-lg-8">
                             <div class="card-body px-0 px-md-4 py-2">
                                 <div>
-                                    <h2 class="pt-2 pt-md-0 card-title text-left">{{ service.type }}</h2>
+                                    <h2 class="pt-2 pt-md-0 card-title text-left text-gold">{{ service.type }}</h2>
                                 </div>
-                                <div class="mb-5">
+                                <div class="mb-3" style="color: #f0ca69b5; line-height: 25px;">
                                     <p>
                                         {{ service.description }}
                                     </p>
                                 </div>
                                 {% if request.user.is_superuser %}
-                                <small class="edit-delete-btns align-bottom">
-                                    <a href="{% url 'edit_service' service.id %}">Edit</a> |
-                                    <a href="{% url 'delete_service' service.id %}">Delete</a>
+                                <small class="edit-delete-btns align-bottom mb-2 d-block">
+                                    <a href="{% url 'edit_service' service.id %}" class="text-gold">Edit</a><span class="text-muted"> |</span>
+                                    <a href="{% url 'delete_service' service.id %}" class="text-gold">Delete</a>
                                 </small>
+                                <div class="align-bottom">
+                                    <a href="{% url 'contact' %}" class="btn btn-sm gold-button py-2 text-black">Enquire Now</a>
+                                </div>
                                 {% else %}
                                 <div class="align-bottom">
                                     <a href="{% url 'contact' %}" class="btn btn-sm gold-button py-2 text-info">Enquire Now</a>

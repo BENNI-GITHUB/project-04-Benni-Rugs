@@ -11,12 +11,18 @@ class Contact(models.Model):
     PRODUCT_QUERY = 'PQ'
     ORDER_QUERY = 'OQ'
     DELIVERY_QUERY = 'DR'
+    DELIVERY_INSURANCE = 'DI'
+    RUG_REPAIR = 'RR'
+    RUG_WASHING = 'RW'
     OTHER = 'O'
     ENQUIRY_CHOICES = [
-        ('DESIGN_CONSULTATION', ' Rug Design Consultation'),
+        ('DESIGN_CONSULTATION', 'Rug Design Consultation'),
         ('PRODUCT_QUERY', 'Product Query'),
         ('ORDER_QUERY', 'Order Query'),
         ('DELIVERY_QUERY', 'Delivery Query'),
+        ('DELIVERY_INSURANCE', 'Delivery and Insurance'),
+        ('RUG_REPAIR', 'Rug Repair Services'),
+        ('RUG_WASHING', 'Rug Washing Services'),
         ('OTHER', 'Other')
         ]
 

@@ -1,3 +1,6 @@
+
+""" Contact forms """
+
 from django import forms
 from .models import Contact
 
@@ -12,3 +15,5 @@ class ContactForm(forms.ModelForm):
 
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-gold bg-transparent text-gold'
+
+        

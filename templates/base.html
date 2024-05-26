@@ -79,18 +79,18 @@
                                         <div><span class="pr-3 text-capitalize username text-gold">{{ user.username }}</span><i class="fas fa-user fa-lg"></i></div>
                                     </div>
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="user-options">
+                                <div class="dropdown-menu bg-transparent" aria-labelledby="user-options">
                                     {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Benni Rugs Management</a>
-                                    <a href="{% url 'add_service' %}" class="dropdown-item">Rug Services Management</a>
-                                    <a href="{% url 'enquiries' %}" class="dropdown-item">Enquiries</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item text-gold">Benni Rugs Management</a>
+                                    <a href="{% url 'add_service' %}" class="dropdown-item text-gold">Rug Services Management</a>
+                                    <a href="{% url 'enquiries' %}" class="dropdown-item text-gold">Enquiries</a>
                                     {% endif %}
-                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    <a href="{% url 'profile' %}" class="dropdown-item text-gold">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item text-gold">Logout</a>
                                     {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Signup</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item text-gold">Signup</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item text-gold">Login</a>
                                     {% endif %}
                                 </div>
                             </li>

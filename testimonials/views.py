@@ -19,22 +19,20 @@ class Testimonials(generic.ListView):
         return context
 
 
-class AddTestimonial(
-        LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
-
-    """This view is used to allow a user to add a testimonial"""
+class AddTestimonial(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     form_class = TestimonialForm
     template_name = 'testimonials/add_testimonial.html'
     success_message = "Your testimonial was added successfully"
+    success_url = reverse_lazy('testimonials')
 
     def form_valid(self, form):
-        """
-        Override the form_valid() method in model form view
-        in order to set the signed in user as the name on the testimonial.
-        """
         form.instance.name = self.request.user
+        print(f"Form valid: {form.instance}")
         return super().form_valid(form)
 
+    def form_invalid(self, form):
+        print(f"Form invalid: {form.errors}")
+        return super().form_invalid(form)
 
 class EditTestimonial(
         LoginRequiredMixin, UserPassesTestMixin,

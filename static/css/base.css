@@ -173,9 +173,32 @@ input[type="text"]:focus {
     color: #4D4E54;
 }
 
+.textinput {
+	background-color: transparent !important;
+	color: #F0CA69 !important;
+}
+
+.form-check-label {
+	color: #f0ca698e !important;
+}
+
+.form-check-input {
+	color: #F0CA69 !important;
+	background-color: transparent !important;
+}
 .dropdown-item:hover {
 	background-color: #F0CA69;
 	color: #2B0101 !important; 
+}
+
+option {
+    color: #2B0101;  
+    background-color: #F0CA69; 
+}
+
+option:hover {
+	color: #2b0101c7;  
+    background-color: #F0CA69; 
 }
 
 .navbar ul a {
@@ -515,14 +538,6 @@ input[type=number] {
 
 /* Service Cards */
 
-.alt-colour {
-    background: #9401014c;
-}
-
-.alt-colour:nth-child(odd) {
-    background:  #b400004c;
-}
-
 .service-img {
     height: 300px;
     object-fit: cover;
@@ -547,7 +562,7 @@ input[type=number] {
 
 .star-rating label {
 	font-size: 2em;
-	color: #ddd;
+	color: #f0ca693c;
 	cursor: pointer;
 }
 .star-rating input[type="radio"]:checked ~ label {
@@ -562,14 +577,20 @@ input[type=number] {
 /* Messages */
 
 .message-container {
-    position: fixed;
+    position: absolute;
     top: 72px;
-    right: 15px;
+    right: 25px;
     z-index: 99999999999;
+	background-color: #F0CA69;
 }
 
 .custom-toast {
     overflow: visible;
+	z-index: 222;
+	z-index: 9999999999;
+	color: #000000;
+
+
 }
 
 .bag-notification-wrapper {

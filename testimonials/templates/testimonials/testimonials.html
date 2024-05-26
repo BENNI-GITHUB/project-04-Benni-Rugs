@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center pt-4">Testimonials</h1>
+            <h1 class="text-left pt-5"  style="color: #f0ca698f;">Testimonials</h1>
         </div>
         <div class="col-12">
             <div class="pt-3 text-center">
@@ -26,11 +26,12 @@
             </div>
         </div>
     </div>
+    <hr style="background-color: #f0ca69b5;">
     <br>
     <div class="container mb-4">
         <div class="card-columns">
             {% for testimonial in testimonial_list  %}
-            <div class="card my-3 testimonial-bg border-0">
+            <div class="card my-3 border-gold bg-transparent">
                 <div class="text-center">
                     {% if testimonial.rating == 5 %}
                     <div class="star-rating">
@@ -54,19 +55,19 @@
                     </div>
                     {% endif %}
                 </div>
-                <div class="card-body">
+                <div class="card-body text-gold">
                     <h4 class="text-center"><strong>{{ testimonial.service.type }}</strong></h4>
                     {{ testimonial.body }}
                 </div>
-                <div class="card-body">
+                <div class="card-body text-gold">
                     <strong>{{ testimonial.name }}</strong>
                     <br>
                     {{ testimonial.created_on }}
                     {% if user.is_authenticated and testimonial.name == user or user.is_superuser %}
-                    <span class="align-self-end">
+                    <span class="align-self-end text-gold">
                         <small class="edit-delete-btns ">
-                            <a href="{% url 'edit_testimonial' testimonial.id %}">Edit</a> |
-                            <a href="{% url 'delete_testimonial' testimonial.id %}">Delete</a>
+                            <a href="{% url 'edit_testimonial' testimonial.id %}" class="text-gold">Edit</a> |
+                            <a href="{% url 'delete_testimonial' testimonial.id %}" class="text-gold">Delete</a>
                         </small>
                     </span>
                     {% endif %}
