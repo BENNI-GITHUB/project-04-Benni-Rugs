@@ -20,7 +20,7 @@
         </div>
         <div class="col-12">
             <div class="pt-3 text-center">
-                <a href="{% url 'add_testimonial' %}" class="btn btn-sm gold-button py-2" aria-label="add-testimonial">
+                <a href="{% url 'add_testimonial' %}" class="btn btn-sm gold-button text-darkred py-2" aria-label="add-testimonial">
                     Add Testimonial
                 </a>
             </div>
@@ -62,14 +62,14 @@
                 <div class="card-body text-gold">
                     <strong>{{ testimonial.name }}</strong>
                     <br>
-                    {{ testimonial.created_on }}
+                    <p class="my-2">{{ testimonial.created_on }}</p>
                     {% if user.is_authenticated and testimonial.name == user or user.is_superuser %}
-                    <span class="align-self-end text-gold">
+                    <div class="align-self-end text-gold my-1">
                         <small class="edit-delete-btns ">
-                            <a href="{% url 'edit_testimonial' testimonial.id %}" class="text-gold">Edit</a> |
+                            <a href="{% url 'edit_testimonial' testimonial.id %}" class="text-gold">Edit</a><span class="text-gold"> | </span>
                             <a href="{% url 'delete_testimonial' testimonial.id %}" class="text-gold">Delete</a>
                         </small>
-                    </span>
+                    </div>
                     {% endif %}
                 </div>
             </div>

@@ -387,6 +387,10 @@ h1.style7, h2.style7, h3.style7, p.style7 {
 	line-height: 25px;
 }
 
+
+.InputElement {
+	color: #F0CA69;
+}
 /* Footer */
 footer {
 	border-top: 2px solid #F0CA69;
@@ -573,24 +577,23 @@ input[type=number] {
 	color: #F0CA69;
 }
 
+.bg-darkred {
+	background-color: #2b0101ac;
+}
 
 /* Messages */
 
 .message-container {
-    position: absolute;
+    position: fixed;
     top: 72px;
-    right: 25px;
-    z-index: 99999999999;
-	background-color: #F0CA69;
+    right: 15px;
+    z-index: 555555555555;
 }
 
 .custom-toast {
     overflow: visible;
-	z-index: 222;
-	z-index: 9999999999;
-	color: #000000;
-
-
+	background-color: #2B0101;
+	
 }
 
 .bag-notification-wrapper {

@@ -19,21 +19,22 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12">
-            <h1 class="text-center pt-4">Checkout</h1>
+            <h1 class="text-left pt-4" style="color: #f0ca698f;">Checkout</h1>
         </div>
     </div>
+    <hr style="background-color: #f0ca69b5;">
     <br>
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last px-4 px-sm-0 mb-5">
-            <p class="text-muted">Order Summary ({{ product_count }})</p>
+            <p class="text-gold">Order Summary ({{ product_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="mb-1 mt-0 small text-muted">Item</p>
+                    <p class="mb-1 mt-0 small text-gold">Item</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                    <p class="mb-1 mt-0 small text-gold">Subtotal</p>
                 </div>
             </div>
             {% for item in bag_items %}
@@ -48,30 +49,30 @@
                     </a>
                 </div>
                 <div class="col-7">
-                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                    <p class="my-1" style="color: #f0ca698f;"><strong>{{ item.product.name }}</strong></p>
+                    <p class="my-1 small" style="color: #f0ca698f;">Qty: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="my-0 small text-muted">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    <p class="my-1 small" style="color: #f0ca698f;">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                 </div>
             </div>
             {% endfor %}
-            <hr class="my-0">
+            <hr class="my-2" style="background-color: #f0ca69b5;">
             <div class="row text-right">
                 <div class="col-7 offset-2">
-                    <p class="my-0">Order Total:</p>
-                    <p class="my-0">Delivery:</p>
-                    <p class="my-0">Grand Total:</p>
+                    <p class="my-1" style="color: #f0ca698f;">Order Total:</p>
+                    <p class="my-1" style="color: #f0ca698f;">Delivery:</p>
+                    <p class="my-1" style="color: #f0ca698f;">Grand Total:</p>
                 </div>
                 <div class="col-3">
-                    <p class="my-0">£{{ total | floatformat:2 }}</p>
-                    <p class="my-0">£{{ delivery | floatformat:2 }}</p>
-                    <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+                    <p class="my-1" style="color: #f0ca698f;">£{{ total | floatformat:2 }}</p>
+                    <p class="my-1" style="color: #f0ca698f;">£{{ delivery | floatformat:2 }}</p>
+                    <p class="my-1" style="color: #f0ca698f;"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
                 </div>
             </div>
         </div>
         <div class="col-12 col-lg-6">
-            <p class="text-muted pl-3">Please fill out the form below to complete your order</p>
+            <p class="pl-3 text-gold">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
@@ -111,17 +112,17 @@
                 <div class="submit-button text-right mt-5 mb-5">
                     <a href="{% url 'view_bag' %}" class="btn border-gold btn-outline-dark rounded-0">
                         <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
+                            <i class="fas fa-chevron-left text-gold"></i>
                         </span>
-                        <span class="font-weight-bold">Adjust Bag</span>
+                        <span class="font-weight-bold text-gold">Adjust Bag</span>
                     </a>
                     <button id="submit-button" class="btn border-gold btn-outline-dark rounded-0">
-                        <span class="font-weight-bold">Complete Order</span>
+                        <span class="font-weight-bold text-gold">Complete Order</span>
                         <span class="icon">
-                            <i class="fas fa-lock"></i>
+                            <i class="fas fa-lock text-gold"></i>
                         </span>
                     </button>
-                    <p class="small text-danger my-2">
+                    <p class="small text-warning my-2">
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
