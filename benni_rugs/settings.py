@@ -14,7 +14,9 @@ from pathlib import Path
 import dj_database_url
 
 from os import path
-
+import os
+if os.path.exists("env.py"):
+  import env 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,9 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True 
 
-ALLOWED_HOSTS = ['benni-rugs-78e83a64387b.herokuapp.com', 'localhost']
+# 'DEVELOPMENT' in os.environ
+
+ALLOWED_HOSTS = ['benni-rugs-78e83a64387b.herokuapp.com', 'localhost', '8000-bennigithub-project04be-n8lhczwu3hy.ws-eu114.gitpod.io']
 
 
 # Application definition
@@ -136,6 +140,7 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
+    print('connected to postgres')
 else:
     DATABASES = {
         'default': {
@@ -143,6 +148,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+    print('connected to sqlite3')
 
 
 # Password validation
