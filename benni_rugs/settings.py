@@ -9,14 +9,13 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import os
 from pathlib import Path
+import os
 import dj_database_url
 
 from os import path
-import os
-if os.path.exists("env.py"):
-  import env 
+if path.exists("env.py"):
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,8 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
-
+DEBUG = False
 # 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['benni-rugs-78e83a64387b.herokuapp.com', 'localhost', '8000-bennigithub-project04be-n8lhczwu3hy.ws-eu114.gitpod.io']
@@ -120,11 +118,11 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -140,7 +138,6 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-    print('connected to postgres')
 else:
     DATABASES = {
         'default': {
@@ -148,8 +145,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-    print('connected to sqlite3')
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
