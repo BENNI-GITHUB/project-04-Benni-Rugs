@@ -11,7 +11,7 @@
 .overlay {
 	height: 100%;
 	width: 100%;
-	top: 150px;
+	top: 0;
 	left: 0;
 	position: fixed;
 	background: #2B0101;
@@ -134,6 +134,8 @@ body {
 
 .navbar-toggler-icon{
     color: #F0CA69 !important;
+	background-color: #F0CA69 !important;
+	border-radius: 10%;
 }
 
 .nav-social-networks i:hover {
@@ -154,6 +156,9 @@ body {
 	color: #f0ca69b4;
 }
 
+#div_id_email label {
+	display: none;
+}
 
 #sort-selector:focus,
 input[type="text"]:focus {
@@ -292,6 +297,10 @@ option:hover {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	font-weight: 700;
+}
+
+.blog-source-container {
+	height: 100vh;
 }
 
 .blog-image-1 {
@@ -673,4 +682,13 @@ input[type=number] {
         border: none;
         padding: 0 !important;
     }
+
+	.blog-source-container {
+		height: 1100px;
+	}
+
+	.blog-image-1, 
+	.blog-image-2 {
+		height: 500px;
+	}
 }
