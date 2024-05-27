@@ -299,6 +299,13 @@ option:hover {
 	font-weight: 700;
 }
 
+.subscribe-main {
+	background-image: url('/static/images/container02.jpg');     
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .blog-source-container {
 	height: 100vh;
 }
