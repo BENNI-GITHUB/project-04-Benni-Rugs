@@ -405,7 +405,7 @@ h1.style7, h2.style7, h3.style7, p.style7 {
 
 
 .InputElement {
-	color: #F0CA69;
+	color: #F0CA69 !important;
 }
 /* Footer */
 footer {
