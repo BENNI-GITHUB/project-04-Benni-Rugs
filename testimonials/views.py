@@ -27,10 +27,11 @@ class AddTestimonial(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView
 
     def form_valid(self, form):
         form.instance.name = self.request.user
-        print(f"Form valid: {form.instance}")
+        print(form.data)
         return super().form_valid(form)
 
     def form_invalid(self, form):
+       
         print(f"Form invalid: {form.errors}")
         return super().form_invalid(form)
 

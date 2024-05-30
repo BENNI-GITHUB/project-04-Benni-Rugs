@@ -7,7 +7,10 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Field, Submit
 
 
+
+
 class TestimonialForm(forms.ModelForm):
+    rating = forms.IntegerField(widget=forms.HiddenInput)
     class Meta:
         model = Testimonial
         fields = [
@@ -15,9 +18,7 @@ class TestimonialForm(forms.ModelForm):
             'body',
             'service',
         ]
-        widgets = {
-            'rating': forms.HiddenInput(),
-        }
+
 
     def __init__(self, *args, **kwargs):
         super(TestimonialForm, self).__init__(*args, **kwargs)

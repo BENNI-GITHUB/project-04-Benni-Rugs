@@ -12,7 +12,7 @@ class Testimonial(models.Model):
         User, on_delete=models.CASCADE, related_name="testimonials")
     service = models.ForeignKey(
         Service, on_delete=models.CASCADE, related_name='testimonial')
-    rating = models.IntegerField(min)
+    rating = models.IntegerField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now=True)
 

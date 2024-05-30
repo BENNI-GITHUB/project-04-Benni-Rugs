@@ -27,15 +27,15 @@
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="star-rating">
-                    <input type="radio" name="rating" id="5-stars" value="5">
+                    <input type="radio" name="rating-start" id="5-stars" value="5">
                     <label for="5-stars" class="star">&#9733;</label>
-                    <input type="radio" name="rating" id="4-stars" value="4">
+                    <input type="radio" name="rating-start" id="4-stars" value="4">
                     <label for="4-stars" class="star">&#9733;</label>
-                    <input type="radio" name="rating" id="3-stars" value="3">
+                    <input type="radio" name="rating-start" id="3-stars" value="3">
                     <label for="3-stars" class="star">&#9733;</label>
-                    <input type="radio" name="rating" id="2-stars" value="2">
+                    <input type="radio" name="rating-start" id="2-stars" value="2">
                     <label for="2-stars" class="star">&#9733;</label>
-                    <input type="radio" name="rating" id="1-star" value="1">
+                    <input type="radio" name="rating-start" id="1-star" value="1">
                     <label for="1-star" class="star">&#9733;</label>
                 </div>
                 {{ form | crispy }}
@@ -46,4 +46,14 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.querySelectorAll('.star-rating input').forEach((start)=>{
+        start.addEventListener('click', (event)=>{
+            console.log('clicked');
+            console.log(event.target.value);
+            document.getElementById('id_rating').value = event.target.value;
+        })
+    })
+
+</script>
 {% endblock %}
