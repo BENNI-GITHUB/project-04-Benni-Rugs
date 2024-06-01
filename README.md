@@ -8,7 +8,7 @@ The payment system uses Stripe. Please note that this website is for educational
 
 To test this system, test card details can be used. A list of these can be found in Stripe's documentation [here](https://stripe.com/docs/testing#cards).
 
-The live link can be found here - [Benni Rugs](https://benni-rugs-78e83a64387b.herokuapp.com//)
+The live link can be found here - [Benni Rugs](https://benni-rugs-78e83a64387b.herokuapp.com/)
 
 ![Site Mockup](docs/readme_images/site_mockup.png)
 
