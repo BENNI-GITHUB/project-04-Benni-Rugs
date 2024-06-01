@@ -67,10 +67,6 @@ The live link can be found here - [Benni Rugs](https://benni-rugs-78e83a64387b.h
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
-
-
-
 ## User Experience (UX)
 
 A visitor to Benni Rugs would be someone who is most likely an adult who is interested in buying Antique or modern rug products and high-end rug services.
@@ -135,7 +131,7 @@ The site features an elegant and dark design, accented with gold details to evok
 #### Colour Scheme
 Colour palette from Coolors
 
-![Colour Scheme](docs/readme_images/colour_scheme.png)
+![Colour Scheme](docs/readme_images/pallete.png)
 
 The color scheme of the site is primarily gold and Sangria. The Sangria color is inspired by the hues of antique Persian rugs, while the gold color for text and details adds an elegant contrast to the site.
 

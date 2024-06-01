@@ -44,7 +44,7 @@ body {
     min-height: calc(100vh - 328px);
 }
 
-
+#wrapper1,
 #wrapper {
 	-webkit-overflow-scrolling: touch;
 	align-items: center;
@@ -57,6 +57,7 @@ body {
 	z-index: 2;
 }
 
+#main1,
 #main {
 	--alignment: center;
 	--flex-alignment: center;
