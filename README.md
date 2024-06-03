@@ -271,7 +271,7 @@ Custom Error Pages were created to give the user more information on the error a
 **Logo**
 - I designed the website's logo inspired by the traditional rug shape and the name of the website, using the main colors featured on the site.
 - This logo is positioned in the top left of the navigation bar and the middle part of the footer. The logo is linked to the home page for ease of navigation for the user.
-![logo](docs/readme_images/features/logo.png)
+![logo](docs/readme_images/features/LOGO.png)
 
 **Navigation Bar**
 
