@@ -150,7 +150,7 @@ The Lexend Deca and Raleway fonts are the main fonts used for the title and body
 ![Home Page](docs/wireframes/home_wf.png)
 </details>
 
-<details>
+<!-- <details>
 
  <summary>Shop Rugs Page</summary>
 
@@ -232,7 +232,7 @@ The Lexend Deca and Raleway fonts are the main fonts used for the title and body
  <summary>Rug Service Management Page</summary>
 
 ![Rug Services Management](docs/wireframes/rug_service_management_wf.png)
-</details>
+</details> -->
 
 ## Database Schema 
 
@@ -632,6 +632,7 @@ Custom Error Pages were created to give the user more information on the error a
 - 403 Page Forbidden - Looks like you're trying to access forbidden content. Please log out and sign in to the correct account.
 ![404 error](docs/readme_images/features/404_error.png)
 - 404 Page Not Found - The page you're looking for doesn't exist.
+![500 error](docs/readme_images/features/500_error.png)
 - 500 Server Error - Due to an internal error we are unable to process this request.
 
 ## Business Model
